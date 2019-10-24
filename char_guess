@@ -1,0 +1,19 @@
+def isIn(char, aStr):
+    '''
+    char: a single character
+    aStr: an alphabetized string
+    
+    returns: True if char is in aStr; False otherwise
+    '''
+    length = len(aStr)
+    if length != 0:
+        testChar = aStr[length // 2]
+    else:
+        return False
+    if char == testChar:
+        return True
+    else:
+        if char < testChar:
+            return isIn(char, aStr[0:length // 2])
+        else:
+            return isIn(char, aStr[length // 2 + 1:length]  
